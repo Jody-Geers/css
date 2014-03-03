@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<html>
+<head>
+	<style>
+		#testDiv {
+			width: 100px;
+			height: 100px;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="test-div"></div>
+	<span id="output"></span>
+	
+	<script>
+		/*
+		*	API Export
+		*/
+		var _cssManipulation = function ( elId ) {
+			// focus
+			var _focusEl = elId;
+			
+			// get / set element width
+			this.width = function ( width ) {
+				_elStyle( "width", width );
+				return this;
+			};
+			
+			// get / set element height
+			this.height = function ( height ) {
+				_elStyle( "height", height );
+				return this;
+			};
+			
+			// get / set element left position
+			this.left = function ( left ) {
+				_elStyle( "left", left );
+				return this;
+			};
+			
+			// get / set element top position
+			this.top = function ( top ) {
+				_elStyle( "top", top );
+				return this;
+			};
+			
+			// get / set element background color
+			this.backgroundColor = function ( color ) {
+				_elStyle( "backgroundColor", color );
+				return this;
+			};
+			
+			
+			// get / set element position
+			this.position = function ( position ) {
+				_elStyle( "position", position );
+				return this;
+			};
+			
+			// private helper
+			function _elStyle ( attribute, value ) {
+				if ( value )
+					document.getElementById( _focusEl ).style[attribute] = value;
+				else
+					return document.getElementById( _focusEl ).style[attribute];
+			};
+		};
+		
+		/*
+		*	Interaction
+		*/
+		(function initChain ( args ) {
+			// init
+			if ( !args.attached ) window.css = function ( elId ) {
+				return new _cssManipulation( elId );
+			};
+			
+			// test
+			css("test-div")
+				.width("200px")
+				.height("200px")
+				.position("relative")
+				.left("100px")
+				.top("100px")
+				.backgroundColor("blue")
+			;
+
+		})( { attached: window.css } );
+	</script>
+</body>
+</html>
