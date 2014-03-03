@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 # css
 
@@ -24,9 +23,3 @@
 ## License
 
   MIT
-=======
-css
-===
-
-simple dom css manipulation
->>>>>>> 38055efe21b8746b6bcc73b406562011457c0c5f
