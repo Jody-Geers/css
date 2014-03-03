@@ -39,39 +39,39 @@ var _cssManipulation = function ( elId ) {
 */
 			
   // get / set element width
-  this.width = function ( width ) {
-    _elStyle( "width", width );
+  this.width = function width ( width ) {
+    _elStyle( arguments.callee.name, width );
     return this;
   };
 
   // get / set element height
-  this.height = function ( height ) {
-    _elStyle( "height", height );
+  this.height = function height ( height ) {
+    _elStyle( arguments.callee.name, height );
     return this;
   };
 
   // get / set element left position
-  this.left = function ( left ) {
-    _elStyle( "left", left );
+  this.left = function left ( left ) {
+    _elStyle( arguments.callee.name, left );
     return this;
   };
 
   // get / set element top position
-  this.top = function ( top ) {
-    _elStyle( "top", top );
+  this.top = function top ( top ) {
+    _elStyle( arguments.callee.name, top );
     return this;
   };
 
   // get / set element background color
-  this.backgroundColor = function ( color ) {
-    _elStyle( "backgroundColor", color );
+  this.backgroundColor = function backgroundColor ( color ) {
+    _elStyle( arguments.callee.name, color );
     return this;
   };
 
 
   // get / set element position
-  this.position = function ( position ) {
-    _elStyle( "position", position );
+  this.position = function position ( position ) {
+    _elStyle( arguments.callee.name, position );
     return this;
   };
 
