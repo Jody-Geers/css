@@ -1,4 +1,3 @@
-
 # css
 
   Simple dom css manipulation.
@@ -9,7 +8,7 @@
 
 ## API
 
-	// using el id
+	// set - uses el id
 	css("test-div")
 		.width("200px")
 		.height("200px")
@@ -18,6 +17,9 @@
 		.top("100px")
 		.backgroundColor("blue")
 	;
+	
+	// get
+	var testDivWidth = css("test-div").width();
 
 
 ## License
