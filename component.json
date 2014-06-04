@@ -1,0 +1,11 @@
+{
+  "name": "css",
+  "repo": "Jody-Geers/css",
+  "description": "Simple dom css manipulation.",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
