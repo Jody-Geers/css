@@ -1,110 +1,127 @@
 <!doctype html>
-<html lang="en">
 <html>
+
 <head>
-  <style>
-  #testDiv {
-    width: 100px;
-    height: 100px;
-    background-color: green;
-  }
-  </style>
+
+<style>
+
+	/* a green box top left for testing */
+	#testDiv {
+		width: 100px;
+		height: 100px;
+		background-color: green;
+	}
+
+</style>
+
 </head>
+
 <body>
 
-<div id="test-div"></div>
-<span id="output"></span>
+	<!-- a green box top left for testing --> 
+	<div id="test-div"></div>
+	
+	<span id="output"></span>
+	
+</body>
 
 <script>
+
 /*
-*	API Export
+* API Export
 */
-var _cssManipulation = function ( elId ) {
-  // focus
-  var _focusEl = elId;
+var cssManipulation = function( elId ) {
+	
+	// focus
+	var focusEl = elId;
   
-/*NOTE: i want to do below, but arguments.callee.name
-* is useless on the anon function and i cant 
-* rename the anon function, so im a bit stuck there.
-* can change API to .set('css property', 'value')
-* but then i loose the syntactic sugar... ='[
-*/
-/*
-  for ( var key in document.body.style ) {
-    _self[key] = function ( value ) { 
-      _elStyle( arguments.callee.name, value );
-      return _self;
-    };
-  };
-*/
+	/*NOTE: i want to do below, but arguments.callee.name
+	* is useless on the anon function and i cant 
+	* rename the anon function, so im a bit stuck there.
+	* can change API to .set('css property', 'value')
+	* but then i loose the syntactic sugar... ='[
+	*/
+// 	for ( var key in document.body.style ) {
+		
+// 		self[key] = function ( value ) {
 			
-  // get / set element width
-  this.width = function width ( width ) {
-    _elStyle( arguments.callee.name, width );
-    return this;
-  };
+// 			elStyle( arguments.callee.name, value );
+			
+// 			return self;
+			
+// 		};
+    
+// 	};
+			
+	// get / set element width
+	this.width = function width( width ) {
+		elStyle( arguments.callee.name, width );
+		return this;
+	};
 
-  // get / set element height
-  this.height = function height ( height ) {
-    _elStyle( arguments.callee.name, height );
-    return this;
-  };
+	// get / set element height
+	this.height = function height( height ) {
+		elStyle( arguments.callee.name, height );
+		return this;
+	};
 
-  // get / set element left position
-  this.left = function left ( left ) {
-    _elStyle( arguments.callee.name, left );
-    return this;
-  };
+	// get / set element left position
+	this.left = function left( left ) {
+		elStyle( arguments.callee.name, left );
+		return this;
+	};
 
-  // get / set element top position
-  this.top = function top ( top ) {
-    _elStyle( arguments.callee.name, top );
-    return this;
-  };
+	// get / set element top position
+	this.top = function top( top ) {
+		elStyle( arguments.callee.name, top );
+		return this;
+	};
 
-  // get / set element background color
-  this.backgroundColor = function backgroundColor ( color ) {
-    _elStyle( arguments.callee.name, color );
-    return this;
-  };
+	// get / set element background color
+	this.backgroundColor = function backgroundColor( color ) {
+    	elStyle( arguments.callee.name, color );
+    	return this;
+	};
 
 
-  // get / set element position
-  this.position = function position ( position ) {
-    _elStyle( arguments.callee.name, position );
-    return this;
-  };
+	// get / set element position
+	this.position = function position( position ) {
+		elStyle( arguments.callee.name, position );
+		return this;
+	};
 
-  // private helper
-  function _elStyle ( attribute, value ) {
-    if ( value )
-      document.getElementById( _focusEl ).style[attribute] = value;
-    else
-      return document.getElementById( _focusEl ).style[attribute];
-  };
+	// private helper
+	function elStyle( attribute, value ) {
+		if ( value )
+			document.getElementById( focusEl ).style[attribute] = value;
+		else
+			return document.getElementById( focusEl ).style[attribute];
+	};
 
 };
 
 /*
-*	Interaction
+* Interaction
 */
-(function init ( args ) {
-  // init
-  if ( !args.attached ) window.css = function ( elId ) {
-    return new _cssManipulation( elId );
-  };
+(function init( args ) {
+	
+	// init
+	if ( !args.attached ) window.css = function ( elId ) {
+		return new cssManipulation( elId );
+	};
 
-  // test
-  css("test-div")
-    .width("200px")
-    .height("200px")
-    .position("relative")
-    .left("100px")
-    .top("100px")
-    .backgroundColor("blue")
-  ;
+	// test
+	css( 'test-div' )
+		.width( '200px' )
+		.height( '200px' )
+		.position( 'relative' )
+		.left( '100px' )
+		.top( '100px' )
+		.backgroundColor( 'blue' )
+	;
 
 })( { attached: window.css } );
+
 </script>
-</body>
+
 </html>
