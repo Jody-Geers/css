@@ -1,6 +1,6 @@
 # css
 
-  Simple dom css manipulation.
+  Simple dom css manipulation that 'chains'.
 
 ## Installation
 
