@@ -50,8 +50,8 @@ var cssManipulation = function ( elId ) {
 
 	// get / set element background color
 	this.backgroundColor = function backgroundColor( color ) {
-    	elStyle( arguments.callee.name, color );
-    	return this;
+    		elStyle( arguments.callee.name, color );
+    		return this;
 	};
 
 
