@@ -76,6 +76,6 @@ var cssManipulation = function ( elId ) {
 */
 module.exports = function ( elId ) {
 
-  return new cssManipulation( elId );
+	return new cssManipulation( elId );
 
 };
